@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/testBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/testBox.py" afterDir="false" />
-    </list>
+    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testBox.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="345" column="59" lean-forward="true" selection-start-line="345" selection-start-column="59" selection-end-line="345" selection-end-column="59" />
+            <state relative-caret-position="6900">
+              <caret line="345" column="59" selection-start-line="345" selection-start-column="59" selection-end-line="345" selection-end-column="59" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -47,8 +45,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="174" />
-    <option name="y" value="131" />
+    <option name="x" value="1857" />
+    <option name="y" value="56" />
     <option name="width" value="1400" />
     <option name="height" value="970" />
   </component>
@@ -128,15 +126,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561044148096</updated>
-      <workItem from="1561044150877" duration="1996000" />
+      <workItem from="1561044150877" duration="2605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1996000" />
+    <option name="totallyTimeSpent" value="2605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -170,8 +168,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/testBox.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="345" column="59" lean-forward="true" selection-start-line="345" selection-start-column="59" selection-end-line="345" selection-end-column="59" />
+        <state relative-caret-position="6900">
+          <caret line="345" column="59" selection-start-line="345" selection-start-column="59" selection-end-line="345" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
