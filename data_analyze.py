@@ -24,11 +24,11 @@ import pandas as pd
 import numpy as np
 import datetime
 import re
-import mathdata
-
+#import mathdata
+# import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-# import matplotlib.pyplot as plt
+
 
 
 # ## The Data
@@ -255,5 +255,8 @@ df_output = pd.concat([mean_final, min_final, max_final, invalid_series], axis =
 df_output.columns = ['mean', 'min', 'max', 'No. of invalid']
 df_output.to_csv('data_output.csv',encoding='utf-8',index=False)
 
+
+
 print("Output has been saved as data_output.csv.")
+
 input("Press Enter to continue...")
