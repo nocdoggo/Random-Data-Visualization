@@ -253,8 +253,9 @@ invalid_series = invalid_df.sum()
 invalid_series.index = (list(mean_final.index))
 df_output = pd.concat([mean_final, min_final, max_final, invalid_series], axis = 1)
 df_output.columns = ['mean', 'min', 'max', 'No. of invalid']
-df_output.to_csv('data_output.csv',encoding='utf-8',index=False)
-
+#df_output.to_csv('data_output.csv',encoding='utf-8',index=False)
+# update file name
+df_output.to_csv(first_date+'-'+second_date+'.csv',encoding='utf-8',index=False)
 
 
 print("Output has been saved as data_output.csv.")
