@@ -2,9 +2,14 @@
 
 ## 0. Get Started
 
-Since the program is under beta development, the GUI/statistical decisions are not finalized. There won’t be `.exe` executable packages available. Therefore, please make sure your host system matches with our minimum running requirements.
+Since the program is under beta development, the GUI/statistical decisions are not finalized. There won’t be `Graphical User Interface` available. 
 
 ### 0.1 System Requirement
+
+| Windows | Mac OS | Linux |
+| :-----: | :----: | :---: |
+|         |        |       |
+|         |        |       |
 
 
 
