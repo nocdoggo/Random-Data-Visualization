@@ -1,0 +1,9 @@
+,mean,min,max,No. of invalid
+Temp (F),48.96906805953041,-21.0,94.0,702.0
+Dewpt (F),37.8427946860095,-31.0,81.0,720.0
+Wind Spd (mph),10.924292607406024,0.0,40.0,701.0
+Wind Direction (deg),179.58527893742217,0.0,360.0,703.0
+Peak Wind Gust(mph),29.12176630558984,17.0,40.0,1414.0
+Atm Press (hPa),nan,nan,nan,1431.0
+Sea Lev Press (hPa),nan,nan,nan,1431.0
+Precip (in),nan,nan,nan,1431.0
