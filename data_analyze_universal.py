@@ -223,6 +223,7 @@ def analyze_by_feature_1(feature):
 
 
 def analyze_by_feature_2(feature):
+    print('im here')
     mean_temp = []
     min_temp =[]
     max_temp = []
@@ -279,6 +280,7 @@ def main():
     file_selection = ''
     while 1==1:
         file_selection = input('Please input the location of data you want to select '+ '(ugn, ord, or noh'+'):')
+
         if file_selection == 'ugn' or file_selection == 'ord' or file_selection == 'noh':
             break
     listOfFiles = os.listdir(path)
@@ -296,11 +298,14 @@ def main():
     for x in range(0,len(listOfFiles)):
         searchObj = re.search(file_pattern, listOfFiles[x])
         if searchObj:
-            #print (listOfFiles[x] )
+            print (listOfFiles[x] )
             if file_selection == 'ugn' or file_selection == 'ord':
                 train_temp = pd.concat([train_temp,readfile_ord(path+'/'+listOfFiles[x])], axis = 0, ignore_index=True)
             else:
                 train_temp = pd.concat([train_temp,readfile_noh(path+'/'+listOfFiles[x])], axis = 0, ignore_index=True)
+    if train_temp.empty:
+        print('Cannot find any file please check your file name again.')
+        return
     #print(train_temp)
     # check ord time span
     while file_selection == 'ord':
@@ -398,7 +403,7 @@ def main():
         train_temp.replace({'t':'0.001','T':'0.001','m':'nan','M':'nan' },inplace = True)
         train_temp.rename(columns = {'PRCP':'precip','TMAX':'Tmax','TMIN':'Tmin','MEAN':'Tmean'},inplace = True)
         train_temp = train_temp.astype({'precip':'float','Tmax':'float','Tmin':'float','Tmean':'float'})
-        train_temp.to_csv( first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
 
     else:
         #split the data into 8 different files
@@ -423,23 +428,27 @@ def main():
         #parallel process each feature
         pool = multiprocessing.Pool(8)
 
-        #result = analyze_by_feature('temp')
-        #print(result)
+    #write out output
+    if flag == '1':
+        if file_selection == 'ord' or file_selection == 'ugn':
 
-
-
-
-
-        #write out output
-        if flag == '1':
             result = pool.map(analyze_by_feature_1, file_col)
             result_index = train_temp.columns[2:11]
             final_result = pd.DataFrame(result, index =result_index, columns = ['mean','min','max','No. of invalid'],dtype=float)
             #final_result = pd.DataFrame(result, columns = ['mean','min','max','No. of invalid'],dtype=float)
             final_result.to_csv( first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8',na_rep = float('nan'))
 
+        if file_selection == 'noh':
+            train_cal = train_temp[['precip','Tmax','Tmin','Tmean']]
+            result_mean = train_cal.mean()
+            result_max = train_cal.max()
+            result_min = train_cal.min()
+            result_inv = train_cal.isnull().sum()
+            final_result = pd.DataFrame(list(zip(result_mean,result_max,result_min,result_inv)),columns =['mean', 'max', 'min', 'no.invalid'] , index = ['precip','Tmax','Tmin','Tmean'])
+            final_result.to_csv(first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8')
 
-        if flag =='2':
+    if flag =='2':
+        if file_selection == 'ord' or file_selection == 'ugn':
             result = pool.map(analyze_by_feature_2, file_col)
             #get the daily result into a single file
             daily_output = pd.DataFrame()
@@ -448,23 +457,26 @@ def main():
                 temp_result = feature_daily.iloc[:,3]
                 if i==0:
                     daily_output = feature_daily
-
                 else:
                     daily_output.insert(i+3,file_col[i],temp_result)
-            daily_output.to_csv( first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8',na_rep = float('nan'))
+                daily_output.to_csv( first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8',na_rep = float('nan'))
             for i in range(0,8):
                 os.remove(file_col[i]+"_test.csv")
 
+        if file_selection == 'noh':
+            train_temp.to_csv( first_date+'-'+second_date+file_selection+'.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    if file_selection == 'ord' or file_selection == 'ugn':
         for i in range(0,8):
             os.remove(file_col[i]+".csv")
 
 
-        return
+    return
 if __name__ == '__main__':
     main()
-    restart = input('succeeded! would you like to restart the program? (y for yes, n for no)')
+    restart = input('Would you like to restart the program? (y for yes, anything else for no)')
     while restart == 'y':
         main()
-        restart = input('succeeded! would you like to restart the program? (y for yes, n for no)')
+        restart = input('Would you like to restart the program? (y for yes, anything else for no)')
 
     sys.exit()
