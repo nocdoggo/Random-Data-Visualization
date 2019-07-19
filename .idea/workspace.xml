@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Random-Data-Visualization.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Random-Data-Visualization.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1923-01-01-1939-08-01noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1923-01-01-1939-08-01noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1939-08-02-1946-07-14noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1939-08-02-1946-07-14noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1946-07-15-1958-10-31noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1946-07-15-1958-10-31noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1958-11-01-1961-05-01noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1958-11-01-1961-05-01noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1961-05-02-1974-10-10noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1961-05-02-1974-10-10noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1974-10-11-1989-04-20noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1974-10-11-1989-04-20noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1989-04-21-1993-05-01noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1989-04-21-1993-05-01noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1993-05-02-1997-04-01noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1993-05-02-1997-04-01noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1997-04-02-2000-04-22noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/1997-04-02-2000-04-22noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2000-04-23-2002-04-26noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/2000-04-23-2002-04-26noh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2002-04-27-2002-07-31noh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/2002-04-27-2002-07-31noh.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/data_analyze_universal.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
-              <caret line="299" column="21" lean-forward="true" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+              <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
               <folding>
                 <element signature="e#826#845#0" expanded="true" />
               </folding>
@@ -93,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,7 +98,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,11 +277,13 @@
       <workItem from="1561574742442" duration="6285000" />
       <workItem from="1562084348243" duration="8391000" />
       <workItem from="1562183204526" duration="3565000" />
+      <workItem from="1563567977620" duration="205000" />
+      <workItem from="1563568196570" duration="601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37702000" />
+    <option name="totallyTimeSpent" value="38508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,7 +297,7 @@
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15158924" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15525672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -320,10 +310,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32922733" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.32640588" side_tool="true" visible="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.32762837" side_tool="true" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.6735941" visible="true" weight="0.32922733" />
-      <window_info anchor="right" x="0" y="0" width="374" height="826" id="Documentation" side_tool="true" weight="0.21577017" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.6723716" visible="true" weight="0.32922733" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -331,6 +320,7 @@
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" x="0" y="0" width="374" height="826" id="Documentation" order="7" side_tool="true" weight="0.21577017" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +372,7 @@
     <entry file="file://$PROJECT_DIR$/data_analyze_universal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="299" column="21" lean-forward="true" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+          <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
           <folding>
             <element signature="e#826#845#0" expanded="true" />
           </folding>
