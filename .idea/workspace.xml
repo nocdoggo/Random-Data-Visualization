@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_analyze_universal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+            <state relative-caret-position="371">
+              <caret line="326" lean-forward="true" selection-start-line="326" selection-end-line="326" />
               <folding>
                 <element signature="e#826#845#0" expanded="true" />
               </folding>
@@ -279,11 +277,12 @@
       <workItem from="1562183204526" duration="3565000" />
       <workItem from="1563567977620" duration="205000" />
       <workItem from="1563568196570" duration="601000" />
+      <workItem from="1563822208972" duration="2461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38508000" />
+    <option name="totallyTimeSpent" value="40969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -297,7 +296,7 @@
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15525672" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15709047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -308,11 +307,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32922733" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49938875" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.32762837" side_tool="true" visible="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061125" side_tool="true" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.6723716" visible="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6717604" weight="0.32922733" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -371,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_analyze_universal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+        <state relative-caret-position="371">
+          <caret line="326" lean-forward="true" selection-start-line="326" selection-end-line="326" />
           <folding>
             <element signature="e#826#845#0" expanded="true" />
           </folding>
