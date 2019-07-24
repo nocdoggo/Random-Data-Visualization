@@ -10,6 +10,8 @@ Since the program is under beta development, the GUI/statistical decisions are n
 | :----------------: | :-------------------: | :--------------------: |
 | Windows 7 or above | Max OS 10.10 or above | Kernel 4.0.08 or above |
 
+
+
 ### 0.2 Software Requirement
 
 A minimum of `Python 3.2` is required to run the script. Any additional required packages will be downloaded via `pip3` tool. So, internet connection is required during the first set-up process.
@@ -46,6 +48,8 @@ In order to install all required packages, please launch ==Terminal or Command W
 
 We have obtained the weather condition datasets from [MRCC](https://mrcc.illinois.edu/) website, lake ice coverage and lake depth data from [NOAA GLERL](https://www.glerl.noaa.gov/).
 
+
+
 ### 1.1 Weather Data
 
 All the weather datasets are saved in `.csv` format, obtained from [MRCC Cli-MATE](https://mrcc.illinois.eduCLIMATE/). 
@@ -76,7 +80,7 @@ The location letters are:
 
 
 
-#### 1.1 Variables
+#### 1.1.2 Variables
 
 When it comes to the variables inside of the `.csv` file, there are 8 variables being retrieved for analytic purposes.
 
@@ -93,3 +97,28 @@ When it comes to the variables inside of the `.csv` file, there are 8 variables 
 | Sea Lev Press  | The sea level pressure at the location        | hPa  |
 | Precip         | The precipitation at the location of the hour | in   |
 
+
+
+### 1.2 Lake Data
+
+The lake depth and winter ice coverage data are downloaded from the [NOAA server](https://www.glerl.noaa.gov//data/ice/#historical) as `.csv` file.
+
+
+
+#### 1.2.1 Ice Coverage Data
+
+As for this project, we are thoroughly focusing on the ice coverage over Michigan Lake area. The data is updated via [NOAA Server](https://www.glerl.noaa.gov/data/ice/daily/mic.csv). The dataset is named as: <kbd>mic.csv</kbd>.
+
+![](C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\doc\img\07.PNG)
+
+As we can see here, it doesn’t share a same layout as the weather datasets. The 1^st^ column contains the range of dates which data were being collected. It starts from ==November 14== of current year till ==May 31== of next year.
+
+
+
+#### 1.2.2 Lake Depth Data
+
+When it comes to the lake depth, the monthly data can be found on the [NOAA Dashboard](https://www.glerl.noaa.gov/data/dashboard/data/levels/1918_PRES/). The following files are being actively monitored:
+
+![](C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\doc\img\06.png)
+
+These datasets are being updated frequently, yet, not daily together. Hence, some pre-processing is needed, which you can find out more in later sections. 
