@@ -122,3 +122,4 @@ When it comes to the lake depth, the monthly data can be found on the [NOAA Dash
 ![](C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\doc\img\06.png)
 
 These datasets are being updated frequently, yet, not daily together. Hence, some pre-processing is needed, which you can find out more in later sections. 
+
