@@ -572,20 +572,20 @@ train_1['Date'] = (train_1['Date'] - x1).dt.days
 train_1.head()
 
 
-# In[21]:
+# In[26]:
 
 
-date_tick.dt.date
+date_tick.dt.date.unique()
 
 
-# In[22]:
+# In[27]:
 
 
-fig = plt.figure(figsize=(200,3))
+fig = plt.figure(figsize=(200,10))
 print('before the plot')
 g = sns.boxplot(x="Date", y="temp", data=train_1,palette='rainbow')
 print('after the plot')
-g.set_xticklabels( date_tick.dt.date, rotation=60 )
+g.set_xticklabels( date_tick.dt.date.unique(), rotation=60 )
 fig.savefig("output.png")
 
 
