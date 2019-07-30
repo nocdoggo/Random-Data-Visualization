@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/output.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/atm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dewpt.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dewpt.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peak.csv" beforeDir="false" afterPath="$PROJECT_DIR$/peak.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/precip.csv" beforeDir="false" afterPath="$PROJECT_DIR$/precip.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sea.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sea.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/temp.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windD.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windS.csv" afterDir="false" />
-    </list>
+    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +214,7 @@
       <workItem from="1563914243611" duration="1529000" />
       <workItem from="1563915848422" duration="1247000" />
       <workItem from="1564422442260" duration="310000" />
-      <workItem from="1564422855040" duration="4894000" />
+      <workItem from="1564422855040" duration="4895000" />
     </task>
     <task id="LOCAL-00001" summary="New Update">
       <created>1564424845842</created>
