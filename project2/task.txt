@@ -1,5 +1,0 @@
-michigan only
-
-1. write a simple script to visualize the data
-2. after seeing the graph, see what features you want, xx vs. score
-3. how to design a system
