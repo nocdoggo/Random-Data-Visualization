@@ -355,7 +355,7 @@ def main():
         if file_selection == 'ugn' or file_selection == 'ord' or file_selection == 'noh':
             break
     listOfFiles = os.listdir(path)
-
+    listOfFiles.sort()
     file_pattern_ord = re.compile(r'\d\d\d\dord.csv')
     file_pattern_ugn = re.compile(r'\d\d\d\dugn.csv')
     file_pattern_noh = re.compile(r'\d\d\d\ddugn.csv')

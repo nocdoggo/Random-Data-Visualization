@@ -2,110 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/coddeC.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/.ipynb_checkpoints/01-Logistic Regression with Python-Copy1-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/.ipynb_checkpoints/01-Logistic Regression with Python-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python-Copy1.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/atm.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/boxplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/code_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1923-01-01-2002-07-31noh.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1923-1930dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1931-1940dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1941-1950dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1951-1960dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1958-11-01-2018-12-31ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1958-1970ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1961-1970dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1971-1980dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1971-1980ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1981-1990dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1981-1990ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1989-04-21-2018-12-30ugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1989-04-21-2018-12-31ugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1989-2000ugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1991-2000dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/1991-2000ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/2001-2002dugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/2001-2010ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/2001-2010ugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/2011-2018ord.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data/2011-2018ugn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data_analyze.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/data_analyze1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/dewpt.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/miHuron1918.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/peak.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/precip.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/sea.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/temp.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/temp_score.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/windD.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coddeC/windS.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/1961-05-02_1974-10-10_dewpt_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/1961-05-02_1974-10-10_peak_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/1961-05-02_1974-10-10_precip_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/1961-05-02_1974-10-10_windD_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/1961-05-02_1974-10-10_windS_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/atmpressure_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_atmpressure_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_dewpt_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_maxtemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_meantemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_mintemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_precip_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_seapressure_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_winddirection_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_windpeak_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/delta_windspeed_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/dewpt_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/icecoverage_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/maxtemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/meantemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/mintemp_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_atm_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_dewpt_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_peak_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_precip_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_sea_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_temp_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_windD_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/ord/1958-11-01_1961-05-01_windS_box_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/precip_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/seapressure_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/winddirection_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/windpeak_visulization.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coddeC/windspeed_visulization.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processed_all.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/.ipynb_checkpoints/01-Logistic Regression with Python-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/01-Logistic Regression with Python.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/1923-01-01-2002-07-31noh.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/1958-11-01-2018-12-31ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/1989-04-21-2018-12-31ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/atmpressure_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/dates_AMIC.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_atm_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_atm_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_atmpressure_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_dewpt_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_dewpt_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_dewpt_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_max_noh.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_max_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_max_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_maxtemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_mean_noh.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_mean_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_mean_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_meantemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_min_noh.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_min_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_min_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_mintemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_peak_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_peak_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_precip_noh.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_precip_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_precip_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_precip_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_sea_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_sea_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_seapressure_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windD_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windD_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windS_ord.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windS_ugn.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_winddirection_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windpeak_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/delta_windspeed_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/dewpt_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/feature_plot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/icecoverage_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/maxtemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/meantemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/miHuron1918.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/mic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/mintemp_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/precip_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/project2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/seapressure_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/task.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/winddirection_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/windpeak_visulization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/windspeed_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC.zip" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python-Copy1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/01-Logistic Regression with Python.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_atm_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_dewpt_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_peak_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_precip_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_sea_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_temp_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_windD_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/10-01-2005_01-20-2012_windS_box_visulization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/atm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/atm.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/check.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data/1923-01-01-2002-07-31noh.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data/1958-11-01-2018-12-31ord.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data/1989-04-21-2018-12-30ugn.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data/1989-04-21-2018-12-31ugn.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data_analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/data_analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/data_analyze1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/dewpt.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/dewpt.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/peak.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/peak.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/precip.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/precip.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/sea.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/sea.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/temp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/temp_score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/temp_score.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/windD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/windD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coddeC/windS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/coddeC/windS.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -322,6 +281,7 @@
       <workItem from="1564422855040" duration="4895000" />
       <workItem from="1564594477896" duration="639000" />
       <workItem from="1564595446635" duration="3235000" />
+      <workItem from="1564683216244" duration="3421000" />
     </task>
     <task id="LOCAL-00001" summary="New Update">
       <created>1564424845842</created>

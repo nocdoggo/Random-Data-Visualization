@@ -38,6 +38,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from pandas.plotting import register_matplotlib_converters
 import seaborn as sns
+register_matplotlib_converters()
 
 #validates the date
 def validate(date_text):
@@ -354,28 +355,30 @@ def analyze_by_feature_2(feature):
         temp_write.to_csv(feature+'_test.csv',index = False, na_rep = float('nan'))
         return
 
-#draws the daily feature data as box plot and daily flight score as line
+#draws the daily feature data as box plot and daily lake depth as line
 #input: string of the feature name etc: feature from feature.csv
 #output: none
 def draw_by_feature(feature):
     #read feature data
     train_feature = pd.read_csv(feature+'.csv', dtype = str)
 
-    #remove the missing dates and convert the time to datetime
-    train_feature = train_feature[train_feature.iloc[:,2] != 'M']
-    train_feature = train_feature[train_feature.iloc[:,2] != 'm']
+    #convert the M/m into nan and date into datetime
+    train_feature.iloc[:,2].replace('M','nan',inplace = True)
+    train_feature.iloc[:,2].replace('m','nan',inplace = True)
+    train_feature.columns = ['Date', 'Time', feature]
+    train_feature[feature] = pd.to_numeric(train_feature[feature],errors='coerce')
     train_feature['Date'] = pd.to_datetime(train_feature['Date'], errors='coerce')
     #type(train_1.iloc[0,0])
-    train_feature.columns = ['Date', 'Time', feature]
-    train_feature[feature] = pd.to_numeric(train_feature[feature])
+
+    #train_feature[feature] = pd.to_numeric(train_feature[feature])
 
 
     #read in the score data
-    score_temp = pd.read_csv('temp_score.csv',dtype={'Date': str, 'score':float})
+    score_temp = pd.read_csv('temp_score.csv',dtype={'Date': str, 'lake depth':float})
     score_temp['Date'] = pd.to_datetime(score_temp['Date'], errors = 'coerce')
     date_tick = score_temp['Date'].dt.date
-    start_date = date_tick[0].strftime('%m-%d-%Y')
-    end_date = date_tick[len(date_tick)-1].strftime('%m-%d-%Y')
+    start_date = date_tick[0].strftime('%Y-%m-%d')
+    end_date = date_tick[len(date_tick)-1].strftime('%Y-%m-%d')
 
     # if we have feature value to plot, plot as box
     if not train_feature.empty:
@@ -386,26 +389,52 @@ def draw_by_feature(feature):
         # now get ready for the line plots
         score_temp['Date'] = (score_temp['Date'] - x1).dt.days
         # plot the score as line plot
-        fig = plt.figure(figsize=(200,10))
+        fig = plt.figure(figsize=(200,20))
         ax1 = fig.add_subplot(111)
-        ax1 = sns.lineplot( x="Date", y = 'score', data = score_temp)
+        ax1 = sns.lineplot( x="Date", y = 'lake depth', data = score_temp)
         ax1.set_xticklabels( date_tick, rotation=60 )
         # convert the date into int with start date = 0
         train_feature['Date'] = (train_feature['Date'] - x1).dt.days
 
-        ax2 = ax1.twiny()
+        ax2 = ax1.twinx()
         ax2= sns.boxplot( x="Date", y=feature, data=train_feature)
+        ax2.set_xticklabels( date_tick, rotation=60 )
         #ax2.set(ylim=(0,1300))
 
     else:
-        fig = plt.figure(figsize=(200,10))
+        fig = plt.figure(figsize=(200,20))
         ax1 = fig.add_subplot(111)
-        ax1.plot( date_tick, score_temp['score'])
+        ax1.plot( date_tick, score_temp['lake depth'])
     # give the plot a title and output
-    ax1.title.set_text(feature + '(box) and flight score vs time')
+    ax1.title.set_text(feature + '(box) and lake depth vs time')
     output_str = start_date + '_' + end_date + '_' + feature + '_box_visulization.png'
     fig.savefig(output_str)
     return
+
+# read the ice coverage data
+# input the filename of the ice coverge data
+# output dataframe containing the read ice coverage data
+def readic(filename):
+    #read the csv file for ice coverage
+    train = pd.read_csv(filename)
+    # get rid of the last two columns as they are repetead
+    train = train.iloc[:, 0:50]
+    #rename the days column and make it index
+    temp = train.columns.values
+    temp[0] = 'days'
+    train.columns = temp
+    train.set_index('days')
+    #get rid of the bottom nan rows
+    nrows = train.shape[0]
+    bot_bound = nrows-10
+    for i in range(bot_bound, nrows):
+        if type(train.iloc[i]['days']) == float:
+            print(i)
+            train.drop(range(i,nrows),inplace=True)
+            break
+    return train
+
+
 
 def main():
 
@@ -415,12 +444,15 @@ def main():
     # read all the csv files
     file_selection = ''
     while 1==1:
-        file_selection = input('Please input the location of data you want to select '+ '(ugn, ord, or noh'+'):')
+        file_selection = input('Please input the location of data you want to select '+ '(ugn, ord'+'):')
 
-        if file_selection == 'ugn' or file_selection == 'ord' or file_selection == 'noh':
+        #if file_selection == 'ugn' or file_selection == 'ord' or file_selection == 'noh':
+        if file_selection == 'ugn' or file_selection == 'ord' :
             break
     listOfFiles = os.listdir(path)
+    listOfFiles.sort()
 
+    # use re to detect which location we need
     file_pattern_ord = re.compile(r'\d\d\d\dord.csv')
     file_pattern_ugn = re.compile(r'\d\d\d\dugn.csv')
     file_pattern_noh = re.compile(r'\d\d\d\ddugn.csv')
@@ -569,8 +601,8 @@ def main():
     # In[3]:
 
 
-    ##### reads the flight score into daily_score
-    #read flight score
+    ##### reads the lake depth into daily_score
+    #read lake depth
     monly_score = pd.read_csv('miHuron1918.csv',skiprows=2)
     #create a date array consisting everyday from 1918.1.1 to today
     today = datetime.datetime.today().date()
@@ -597,13 +629,947 @@ def main():
     score_output_score = daily_score[start_index:end_index+1]
 
     # writes the processed flight data into csv
-    score_output = pd.DataFrame({'Date': score_output_date, 'score':score_output_score})
+    score_output = pd.DataFrame({'Date': score_output_date, 'lake depth':score_output_score})
     score_output.to_csv('temp_score.csv',index = False)
 
     file_col
     # start the parallel
     pool = multiprocessing.Pool(12)
     pool.map(draw_by_feature, file_col)
+
+
+
+#######################################
+    # now we draw the line plots
+    #read in data
+    ice_coverage = readic('mic.csv')
+    monly_score = pd.read_csv('miHuron1918.csv',skiprows=2)
+    #create a date array consisting everyday from 1918.1.1 to today
+    today = datetime.datetime.today().date()
+    base = datetime.date(1918, 1, 1)
+    delta = today - base
+    date_list = [base + datetime.timedelta(days=x) for x in range(0, delta.days)]
+
+
+    # In[11]:
+
+
+    date_list[1]
+
+
+    # In[12]:
+
+
+    #month dictionary, 1 for jan, 2 for feb...
+    month_dic = ['nan','jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
+
+
+    # In[13]:
+
+
+    date_list[37087]
+
+
+    # In[14]:
+
+
+    daily_score = np.empty(delta.days)
+    daily_score[:] = np.nan
+    for i in range(0,delta.days):
+        cur_year = date_list[i].year
+        cur_mon = date_list[i].month
+        cur_score = monly_score.iloc[cur_year-1918][month_dic[cur_mon]]
+        daily_score[i] = cur_score
+
+
+    # In[15]:
+
+
+    #read in ord, ugn, dugn data
+    ord_data = pd.read_csv('1958-11-01-2018-12-31ord.csv')
+    ugn_data = pd.read_csv('1989-04-21-2018-12-31ugn.csv')
+    noh_data = pd.read_csv('1923-01-01-2002-07-31noh.csv')
+
+
+    # In[16]:
+
+
+    #convert the date into datetime
+    ord_data['Date']= pd.to_datetime(ord_data['Date'])
+    ugn_data['Date']= pd.to_datetime(ugn_data['Date'])
+    noh_data['Date']= pd.to_datetime(noh_data['Date'])
+    ugn_date_list = ugn_data['Date'].dt.date
+    ord_date_list = ord_data['Date'].dt.date
+    noh_date_list = noh_data['Date'].dt.date
+
+
+    # In[17]:
+
+
+    #create two series, reshaped_ic containing the daily ice coverage data and reshaped_dates cotaining
+    #corresponding dates
+    reshaped_ic = pd.Series([])
+    ic_days = ice_coverage['days']
+    reshaped_dates = pd.Series([])
+    for i in range(1973,2020):
+        #print(ice_coverage[str(i)])
+        reshaped_ic = reshaped_ic.append(ice_coverage[str(i)],ignore_index=True)
+        reshaped_dates = reshaped_dates.append(ic_days+'-'+str(i),ignore_index=True)
+    reshaped_dates = pd.to_datetime(reshaped_dates, errors='coerce')
+    reshaped_dates = reshaped_dates.dt.date
+
+
+    # In[18]:
+
+
+    #plot the temperature max data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['max'],color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_data['max'],color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_data['Tmax'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('temp max')
+    axes2.set_ylim([-100,200])
+    axes1.title.set_text('max temp vs lake depth')
+    fig.tight_layout()
+    fig.savefig('maxtemp_visulization.png')
+
+
+
+    # In[19]:
+
+
+    #plot the temperature min data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['min'],color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_data['min'],color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_data['Tmin'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('temp min')
+    axes2.set_ylim([-100,200])
+    axes1.title.set_text('min temp vs lake depth')
+    fig.tight_layout()
+    fig.savefig('mintemp_visulization.png')
+
+
+
+    # In[20]:
+
+
+    #plot the temperature mean data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['mean'],color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_data['mean'],color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('temp mean')
+    axes2.set_ylim([-100,200])
+    axes1.title.set_text('mean temp vs lake depth')
+    fig.tight_layout()
+    fig.savefig('meantemp_visulization.png')
+
+
+
+    # In[21]:
+
+
+    #plot the dewpt data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['dewpt'],color = '#DA7C30',linewidth = 0.4, label = 'ord dewpt')
+    axes2.plot(ugn_date_list, ugn_data['dewpt'],color = 'green',linewidth = 0.4, label = 'ugn dewpt')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('dewpt')
+    axes2.set_ylim([-50,100])
+    axes1.title.set_text('dewpt vs lake depth')
+    fig.tight_layout()
+    fig.savefig('dewpt_visulization.png')
+
+
+
+    # In[22]:
+
+
+    #plot the wind speed data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['windS'],color = '#DA7C30',linewidth = 0.4, label = 'ord wind speed')
+    axes2.plot(ugn_date_list, ugn_data['windS'],color = 'green',linewidth = 0.4, label = 'ugn wind speed')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('wind speed')
+    axes2.set_ylim([-30,50])
+    axes1.title.set_text('wind speed vs lake depth')
+    fig.tight_layout()
+    fig.savefig('windspeed_visulization.png')
+
+
+
+    # In[23]:
+
+
+    #plot the wind direction data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['windD'],color = '#DA7C30',linewidth = 0.4, label = 'ord wind direction')
+    axes2.plot(ugn_date_list, ugn_data['windD'],color = 'green',linewidth = 0.4, label = 'ugn wind direction')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('wind direction')
+    axes2.set_ylim([-400,400])
+    axes1.title.set_text('wind direction vs lake depth')
+    fig.tight_layout()
+    fig.savefig('winddirection_visulization.png')
+
+
+
+    # In[44]:
+
+
+    #plot the wind peak data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['peak'],color = '#DA7C30',linewidth = 1, label = 'ord wind peak')
+    axes2.plot(ugn_date_list, ugn_data['peak'],color = 'green',linewidth = 1, label = 'ugn wind peak')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('wind peak')
+    axes2.set_ylim([-10,400])
+    axes1.title.set_text('wind peak vs lake depth')
+    fig.tight_layout()
+    fig.savefig('windpeak_visulization.png')
+
+
+
+    # In[45]:
+
+
+    #plot the atm pressure data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['atm'],color = '#DA7C30',linewidth = 1, label = 'ord atm pressure')
+    axes2.plot(ugn_date_list, ugn_data['atm'],color = 'green',linewidth = 1, label = 'ugn atm pressure')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('atm pressure')
+    axes2.set_ylim([900,1100])
+    axes1.title.set_text('atm pressure vs lake depth')
+    fig.tight_layout()
+    fig.savefig('atmpressure_visulization.png')
+
+
+
+    # In[46]:
+
+
+    #plot the sea pressure data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['sea'],color = '#DA7C30',linewidth = 1, label = 'ord sea pressure')
+    axes2.plot(ugn_date_list, ugn_data['sea'],color = 'green',linewidth = 1, label = 'ugn sea pressure')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('sea pressure')
+    axes2.set_ylim([900,1100])
+    axes1.title.set_text('sea pressure vs lake depth')
+    fig.tight_layout()
+    fig.savefig('seapressure_visulization.png')
+
+
+
+    # In[47]:
+
+
+    #plot the precip data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_data['precip'],color = '#DA7C30',linewidth = 1, label = 'ord precip')
+    axes2.plot(ugn_date_list, ugn_data['precip'],color = 'green',linewidth = 1, label = 'ugn precip')
+    axes2.plot(noh_date_list, noh_data['precip'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn precip')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('precip')
+    #axes2.set_ylim([900,1100])
+    axes1.title.set_text('precip vs lake depth')
+    fig.tight_layout()
+    fig.savefig('precip_visulization.png')
+
+
+
+    # In[48]:
+
+
+    #plot the ice coverage data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.scatter(reshaped_dates, reshaped_ic ,color = '#DA7C30',s=5, label = 'ice coverage')
+    #axes2.plot(reshaped_dates, reshaped_ic ,color = '#DA7C30', label = 'ice coverage')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('ice coverage')
+    #axes2.set_ylim([900,1100])
+    fig.tight_layout()
+    fig.savefig('icecoverage_visulization.png')
+
+
+
+    # In[25]:
+
+
+    #calculate the ord deltas for 8 features
+
+    #####max
+    num_data_ord = len(ord_data['max'])
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['max'][0]
+    new_data[1:num_data_ord] = ord_data['max'][0:num_data_ord-1]
+    ord_max_delta = ord_data['max'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_max_delta],axis =1)
+    temp.columns = ['Date', 'max']
+    temp.to_csv( 'delta_max_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####min
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['min'][0]
+    new_data[1:num_data_ord] = ord_data['min'][0:num_data_ord-1]
+    ord_min_delta = ord_data['min'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_min_delta],axis =1)
+    temp.columns = ['Date', 'min']
+    temp.to_csv( 'delta_min_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+
+    #####mean
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['mean'][0]
+    new_data[1:num_data_ord] = ord_data['mean'][0:num_data_ord-1]
+    ord_mean_delta = ord_data['mean'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_mean_delta],axis =1)
+    temp.columns = ['Date', 'mean']
+    temp.to_csv( 'delta_mean_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####dewpt
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['dewpt'][0]
+    new_data[1:num_data_ord] = ord_data['dewpt'][0:num_data_ord-1]
+    ord_dewpt_delta = ord_data['dewpt'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_dewpt_delta],axis =1)
+    temp.columns = ['Date', 'dewpt']
+    temp.to_csv( 'delta_dewpt_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####windS
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['windS'][0]
+    new_data[1:num_data_ord] = ord_data['windS'][0:num_data_ord-1]
+    ord_windS_delta = ord_data['windS'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_windS_delta],axis =1)
+    temp.columns = ['Date', 'windS']
+    temp.to_csv( 'delta_windS_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####windD
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['windD'][0]
+    new_data[1:num_data_ord] = ord_data['windD'][0:num_data_ord-1]
+    ord_windD_delta = ord_data['windD'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_windD_delta],axis =1)
+    temp.columns = ['Date', 'windD']
+    temp.to_csv( 'delta_windD_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####peak
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['peak'][0]
+    new_data[1:num_data_ord] = ord_data['peak'][0:num_data_ord-1]
+    ord_peak_delta = ord_data['peak'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_peak_delta],axis =1)
+    temp.columns = ['Date', 'peak']
+    temp.to_csv( 'delta_peak_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####atm
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['atm'][0]
+    new_data[1:num_data_ord] = ord_data['atm'][0:num_data_ord-1]
+    ord_atm_delta = ord_data['atm'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_atm_delta],axis =1)
+    temp.columns = ['Date', 'atm']
+    temp.to_csv( 'delta_atm_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####sea
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['sea'][0]
+    new_data[1:num_data_ord] = ord_data['sea'][0:num_data_ord-1]
+    ord_sea_delta = ord_data['sea'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_sea_delta],axis =1)
+    temp.columns = ['Date', 'sea']
+    temp.to_csv( 'delta_sea_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####precip
+    new_data = pd.Series(np.zeros(num_data_ord))
+    new_data[0] = ord_data['precip'][0]
+    new_data[1:num_data_ord] = ord_data['precip'][0:num_data_ord-1]
+    ord_precip_delta = ord_data['precip'] - new_data
+
+    # export to csv
+    temp = pd.concat([ord_date_list, ord_precip_delta],axis =1)
+    temp.columns = ['Date', 'precip']
+    temp.to_csv( 'delta_precip_ord.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+
+    # In[50]:
+
+
+    #calculate the ugn deltas for 8 features
+    num_data_ugn = len(ugn_data['max'])
+    #####max
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['max'][0]
+    new_data[1:num_data_ugn] = ugn_data['max'][0:num_data_ugn-1]
+    ugn_max_delta = ugn_data['max'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_max_delta],axis =1)
+    temp.columns = ['Date', 'max']
+    temp.to_csv( 'delta_max_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####min
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['min'][0]
+    new_data[1:num_data_ugn] = ugn_data['min'][0:num_data_ugn-1]
+    ugn_min_delta = ugn_data['min'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_min_delta],axis =1)
+    temp.columns = ['Date', 'min']
+    temp.to_csv( 'delta_min_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+
+    #####mean
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['mean'][0]
+    new_data[1:num_data_ugn] = ugn_data['mean'][0:num_data_ugn-1]
+    ugn_mean_delta = ugn_data['mean'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_mean_delta],axis =1)
+    temp.columns = ['Date', 'mean']
+    temp.to_csv( 'delta_mean_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####dewpt
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['dewpt'][0]
+    new_data[1:num_data_ugn] = ugn_data['dewpt'][0:num_data_ugn-1]
+    ugn_dewpt_delta = ugn_data['dewpt'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_dewpt_delta],axis =1)
+    temp.columns = ['Date', 'dewpt']
+    temp.to_csv( 'delta_dewpt_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####windS
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['windS'][0]
+    new_data[1:num_data_ugn] = ugn_data['windS'][0:num_data_ugn-1]
+    ugn_windS_delta = ugn_data['windS'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_windS_delta],axis =1)
+    temp.columns = ['Date', 'windS']
+    temp.to_csv( 'delta_windS_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####windD
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['windD'][0]
+    new_data[1:num_data_ugn] = ugn_data['windD'][0:num_data_ugn-1]
+    ugn_windD_delta = ugn_data['windD'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_windD_delta],axis =1)
+    temp.columns = ['Date', 'windD']
+    temp.to_csv( 'delta_windD_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####peak
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['peak'][0]
+    new_data[1:num_data_ugn] = ugn_data['peak'][0:num_data_ugn-1]
+    ugn_peak_delta = ugn_data['peak'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_peak_delta],axis =1)
+    temp.columns = ['Date', 'peak']
+    temp.to_csv( 'delta_peak_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####atm
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['atm'][0]
+    new_data[1:num_data_ugn] = ugn_data['atm'][0:num_data_ugn-1]
+    ugn_atm_delta = ugn_data['atm'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_atm_delta],axis =1)
+    temp.columns = ['Date', 'atm']
+    temp.to_csv( 'delta_atm_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####sea
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['sea'][0]
+    new_data[1:num_data_ugn] = ugn_data['sea'][0:num_data_ugn-1]
+    ugn_sea_delta = ugn_data['sea'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_sea_delta],axis =1)
+    temp.columns = ['Date', 'sea']
+    temp.to_csv( 'delta_sea_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####precip
+    new_data = pd.Series(np.zeros(num_data_ugn))
+    new_data[0] = ugn_data['precip'][0]
+    new_data[1:num_data_ugn] = ugn_data['precip'][0:num_data_ugn-1]
+    ugn_precip_delta = ugn_data['precip'] - new_data
+
+    # export to csv
+    temp = pd.concat([ugn_date_list, ugn_precip_delta],axis =1)
+    temp.columns = ['Date', 'precip']
+    temp.to_csv( 'delta_precip_ugn.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+
+    # In[51]:
+
+
+    #noh data
+    num_data_noh = len(noh_data['precip'])
+    #####precip
+    new_data = pd.Series(np.zeros(num_data_noh))
+    new_data[0] = noh_data['precip'][0]
+    new_data[1:num_data_noh] = noh_data['precip'][0:num_data_noh-1]
+    noh_precip_delta = noh_data['precip'] - new_data
+
+    # export to csv
+    temp = pd.concat([noh_date_list, noh_precip_delta],axis =1)
+    temp.columns = ['Date', 'precip']
+    temp.to_csv( 'delta_precip_noh.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####tmax
+    new_data = pd.Series(np.zeros(num_data_noh))
+    new_data[0] = noh_data['Tmax'][0]
+    new_data[1:num_data_noh] = noh_data['Tmax'][0:num_data_noh-1]
+    noh_max_delta = noh_data['Tmax'] - new_data
+
+    # export to csv
+    temp = pd.concat([noh_date_list, noh_max_delta],axis =1)
+    temp.columns = ['Date', 'max']
+    temp.to_csv( 'delta_max_noh.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####tmin
+    new_data = pd.Series(np.zeros(num_data_noh))
+    new_data[0] = noh_data['Tmin'][0]
+    new_data[1:num_data_noh] = noh_data['Tmin'][0:num_data_noh-1]
+    noh_min_delta = noh_data['Tmin'] - new_data
+
+    # export to csv
+    temp = pd.concat([noh_date_list, noh_min_delta],axis =1)
+    temp.columns = ['Date', 'min']
+    temp.to_csv( 'delta_min_noh.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+    #####tmean
+    new_data = pd.Series(np.zeros(num_data_noh))
+    new_data[0] = noh_data['Tmean'][0]
+    new_data[1:num_data_noh] = noh_data['Tmean'][0:num_data_noh-1]
+    noh_mean_delta = noh_data['Tmean'] - new_data
+
+    # export to csv
+    temp = pd.concat([noh_date_list, noh_mean_delta],axis =1)
+    temp.columns = ['Date', 'mean']
+    temp.to_csv( 'delta_mean_noh.csv',encoding='utf-8',na_rep = float('nan'),index = False)
+
+
+    # In[53]:
+
+
+    #graph delta
+    #plot the delta temperature max data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_max_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_max_delta,color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_max_delta,color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta temp max')
+    axes2.set_ylim([-100,100])
+    axes1.title.set_text('delta max temp vs lake depth')
+
+    fig.tight_layout()
+    fig.savefig('delta_maxtemp_visulization.png')
+
+
+
+    # In[55]:
+
+
+    #plot the delta temperature min data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_min_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_min_delta,color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_min_delta,color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta temp min')
+    axes2.set_ylim([-100,200])
+    axes1.title.set_text('delta min temp vs lake depth')
+    fig.tight_layout()
+
+    fig.savefig('delta_mintemp_visulization.png')
+
+
+
+    # In[56]:
+
+
+    #plot the delta temperature mean data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_mean_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord temp')
+    axes2.plot(ugn_date_list, ugn_mean_delta,color = 'green',linewidth = 0.4, label = 'ugn temp')
+    axes2.plot(noh_date_list, noh_mean_delta,color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta temp mean')
+    axes2.set_ylim([-100,200])
+    axes1.title.set_text('delta mean temp vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_meantemp_visulization.png')
+
+
+
+    # In[57]:
+
+
+    #plot the delta dewpt data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_dewpt_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord dewpt')
+    axes2.plot(ugn_date_list, ugn_dewpt_delta,color = 'green',linewidth = 0.4, label = 'ugn dewpt')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta dewpt')
+    axes2.set_ylim([-50,100])
+    axes1.title.set_text('delta dewpt vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_dewpt_visulization.png')
+
+
+
+    # In[28]:
+
+
+    #plot the delta wind speed data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_windS_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord wind speed')
+    axes2.plot(ugn_date_list, ugn_windS_delta,color = 'green',linewidth = 0.4, label = 'ugn wind speed')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta wind speed')
+    axes2.set_ylim([-100,100])
+    axes1.title.set_text('delta wind speed vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_windspeed_visulization.png')
+
+
+
+    # In[29]:
+
+
+    #plot the delta wind direction data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_windD_delta,color = '#DA7C30',linewidth = 0.4, label = 'ord wind direction')
+    axes2.plot(ugn_date_list, ugn_windD_delta,color = 'green',linewidth = 0.4, label = 'ugn wind direction')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta wind direction')
+    axes2.set_ylim([-400,400])
+    axes1.title.set_text('delta wind direction vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_winddirection_visulization.png')
+
+
+
+    # In[78]:
+
+
+    #plot the delta wind peak data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_peak_delta,color = '#DA7C30',linewidth = 1, label = 'ord wind peak')
+    axes2.plot(ugn_date_list, ugn_peak_delta,color = 'green',linewidth = 1, label = 'ugn wind peak')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta wind peak')
+    axes2.set_ylim([-10,400])
+    axes1.title.set_text('delta wind peak vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_windpeak_visulization.png')
+
+
+
+    # In[79]:
+
+
+    #plot the delta atm pressure data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_atm_delta,color = '#DA7C30',linewidth = 1, label = 'ord atm pressure')
+    axes2.plot(ugn_date_list, ugn_atm_delta,color = 'green',linewidth = 1, label = 'ugn atm pressure')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta atm pressure')
+    axes2.set_ylim([-100,100])
+    axes1.title.set_text('delta atm pressure vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_atmpressure_visulization.png')
+
+
+
+    # In[80]:
+
+
+    #plot the delta sea pressure data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_sea_delta,color = '#DA7C30',linewidth = 1, label = 'ord sea pressure')
+    axes2.plot(ugn_date_list, ugn_sea_delta,color = 'green',linewidth = 1, label = 'ugn sea pressure')
+    #axes2.plot(noh_date_list, noh_data['Tmean'],color = '#6B4C9A',linewidth = 0.4, label = 'dugn temp')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta sea pressure')
+    axes2.set_ylim([-100,100])
+    axes1.title.set_text('delta sea pressure vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_seapressure_visulization.png')
+
+
+
+    # In[81]:
+
+
+    #plot the delta precip data and the score
+    fig = plt.figure()
+    fig.set_figheight(5)
+    fig.set_figwidth(100)
+    axes1=fig.add_subplot(111)
+    axes1.plot(date_list, daily_score, label = 'lake depth')
+    axes1.set_xlabel('years')
+    axes1.set_ylabel('lake depth')
+
+    axes2 = axes1.twinx()
+    axes2.plot(ord_date_list, ord_precip_delta,color = '#DA7C30',linewidth = 1, label = 'ord precip')
+    axes2.plot(ugn_date_list, ugn_precip_delta,color = 'green',linewidth = 1, label = 'ugn precip')
+    axes2.plot(noh_date_list, noh_precip_delta,color = '#6B4C9A',linewidth = 0.4, label = 'dugn precip')
+    h1, l1 = axes1.get_legend_handles_labels()
+    h2, l2 = axes2.get_legend_handles_labels()
+    axes1.legend(h1+h2, l1+l2, loc=0)
+    axes2.set_ylabel('delta precip')
+    #axes2.set_ylim([900,1100])
+    axes1.title.set_text('delta precip vs lake depth')
+    fig.tight_layout()
+    fig.savefig('delta_precip_visulization.png')
+
 
     return
 
