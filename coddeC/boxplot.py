@@ -389,7 +389,7 @@ def draw_by_feature(feature):
         # now get ready for the line plots
         score_temp['Date'] = (score_temp['Date'] - x1).dt.days
         # plot the score as line plot
-        fig = plt.figure(figsize=(200,20))
+        fig = plt.figure(figsize=(300,20))
         ax1 = fig.add_subplot(111)
         ax1 = sns.lineplot( x="Date", y = 'lake depth', data = score_temp)
         ax1.set_xticklabels( date_tick, rotation=60 )
@@ -402,7 +402,7 @@ def draw_by_feature(feature):
         #ax2.set(ylim=(0,1300))
 
     else:
-        fig = plt.figure(figsize=(200,20))
+        fig = plt.figure(figsize=(300,20))
         ax1 = fig.add_subplot(111)
         ax1.plot( date_tick, score_temp['lake depth'])
     # give the plot a title and output
