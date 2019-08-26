@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="" />
+    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/Maximum_Ice_Coverage.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atm_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analyze_new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analyze_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dewpt_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/peak_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/precip_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sea_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windD_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windS_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/atm.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/miHuron1918.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/miHuron1918.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dewpt.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dewpt.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peak.csv" beforeDir="false" afterPath="$PROJECT_DIR$/peak.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/precip.csv" beforeDir="false" afterPath="$PROJECT_DIR$/precip.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sea.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sea.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/temp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windS.csv" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.boxplot">
+  <component name="RunManager" selected="Python.data_analyze_v2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Random-Data-Visualization" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="feature_plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="data_analyze_new" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Random-Data-Visualization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,12 +124,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project2/feature_plot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_analyze_new.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,20 +138,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="data_analyze_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Random-Data-Visualization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project2/project2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_analyze_v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data_analyze_v2" />
+        <item itemvalue="Python.data_analyze_new" />
         <item itemvalue="Python.boxplot" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.temp" />
-        <item itemvalue="Python.project2" />
-        <item itemvalue="Python.feature_plot" />
       </list>
     </recent_temporary>
   </component>
@@ -227,6 +246,8 @@
       <workItem from="1564693601250" duration="8057000" />
       <workItem from="1565118055053" duration="534000" />
       <workItem from="1565194620526" duration="585000" />
+      <workItem from="1565644637198" duration="400000" />
+      <workItem from="1565646384517" duration="813000" />
     </task>
     <task id="LOCAL-00001" summary="New Update">
       <created>1564424845842</created>
