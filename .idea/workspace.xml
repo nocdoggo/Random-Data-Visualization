@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Maximum_Ice_Coverage.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atm_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_analyze_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_analyze_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dewpt_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/peak_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/precip_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sea_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/windD_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/windS_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/atm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/miHuron1918.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/miHuron1918.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dewpt.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dewpt.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peak.csv" beforeDir="false" afterPath="$PROJECT_DIR$/peak.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/precip.csv" beforeDir="false" afterPath="$PROJECT_DIR$/precip.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sea.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sea.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/temp.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windD.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/windS.csv" afterDir="false" />
-    </list>
+    <list default="true" id="27a2a7dc-9321-42df-b5f1-87769326c57a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +120,9 @@
       <module name="Random-Data-Visualization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -248,6 +229,7 @@
       <workItem from="1565194620526" duration="585000" />
       <workItem from="1565644637198" duration="400000" />
       <workItem from="1565646384517" duration="813000" />
+      <workItem from="1571167210423" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="New Update">
       <created>1564424845842</created>
