@@ -82,11 +82,17 @@ if (logic_start == 1) && (logic_end == 1) && (loc_cat == 1)
     windS_over_20 = sum(temp_table{start_idx : end_idx, 7} > 20);
     fprintf('\n•	How many days had wind speeds over 20 mph?                %5d', windS_over_20);
     
+    windS_over_30 = sum(temp_table{start_idx : end_idx, 7} > 30);
+    fprintf('\n•	How many days had wind speeds over 30 mph?                %5d', windS_over_30);
+    
     windS_over_40 = sum(temp_table{start_idx : end_idx, 7} > 40);
     fprintf('\n•	How many days had wind speeds over 40 mph?                %5d', windS_over_40);
     
     sea_below_1000 = sum(temp_table{start_idx : end_idx, 11} < 1000);
     fprintf('\n•	How many days had sea level pressures below 1000 mb?      %5d', sea_below_1000);
+    
+    sea_below_995 = sum(temp_table{start_idx : end_idx, 11} < 995);
+    fprintf('\n•	How many days had sea level pressures below 995 mb?       %5d', sea_below_995);
     
     sea_below_990 = sum(temp_table{start_idx : end_idx, 11} < 990);
     fprintf('\n•	How many days had sea level pressures below 990 mb?       %5d', sea_below_990);

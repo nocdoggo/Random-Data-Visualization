@@ -44752,3 +44752,706 @@ Please enter end time: [2018-12-31]
 •	How many days had wind speeds over 40 mph?                    0
 •	How many days had sea level pressures below 1000 mb?          3
 •	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 11:44:25
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1958-11-01
+Please enter end time: [2018-12-31] 
+1961-05-01
+
+•	How many total days are in the time period?                 913
+•	How many days received more than 0.5 inches of rain?         43
+•	How many days received more than 1.0 inches of rain?         12
+•	How many days received more than 2.0 inches of rain?          2
+•	How many days had wind speeds over 20 mph?                   26{Undefined function or variable 'windS_over_40'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('flagger', 'C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\flagger.m', 86)" style="font-weight:bold">flagger</a> (<a href="matlab: opentoline('C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\flagger.m',86,0)">line 86</a>)
+    fprintf('\n•	How many days had wind speeds over 30 mph?                %5d', windS_over_40);
+} 
+opentoline('C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\flagger.m',86,0)
+flagger
+   01-Nov-2019 11:45:56
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1958-11-01
+Please enter end time: [2018-12-31] 
+1961-05-01
+
+•	How many total days are in the time period?                 913
+•	How many days received more than 0.5 inches of rain?         43
+•	How many days received more than 1.0 inches of rain?         12
+•	How many days received more than 2.0 inches of rain?          2
+•	How many days had wind speeds over 20 mph?                   26
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         16
+•	How many days had sea level pressures below 995 mb?           5
+•	How many days had sea level pressures below 990 mb?           2
+   01-Nov-2019 11:46:22
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1961-05-02
+Please enter end time: [2018-12-31] 
+1974-10-10
+
+•	How many total days are in the time period?                4910
+•	How many days received more than 0.5 inches of rain?        300
+•	How many days received more than 1.0 inches of rain?        101
+•	How many days received more than 2.0 inches of rain?         17
+•	How many days had wind speeds over 20 mph?                   97
+•	How many days had wind speeds over 30 mph?                    1
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         37
+•	How many days had sea level pressures below 995 mb?           5
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:12:06
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1974-10-11
+Please enter end time: [2018-12-31] 
+1993-05-01
+
+•	How many total days are in the time period?                6778
+•	How many days received more than 0.5 inches of rain?        338
+•	How many days received more than 1.0 inches of rain?        124
+•	How many days received more than 2.0 inches of rain?         20
+•	How many days had wind speeds over 20 mph?                   80
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         27
+•	How many days had sea level pressures below 995 mb?          10
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:12:43
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1993-05-02
+Please enter end time: [2018-12-31] 
+1997-04-01
+
+•	How many total days are in the time period?                1431
+•	How many days received more than 0.5 inches of rain?         55
+•	How many days received more than 1.0 inches of rain?         17
+•	How many days received more than 2.0 inches of rain?          4
+•	How many days had wind speeds over 20 mph?                   11
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          0
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:13:16
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+1997-04-02
+Please enter end time: [2018-12-31] 
+2000-04-22
+
+•	How many total days are in the time period?                1117
+•	How many days received more than 0.5 inches of rain?         53
+•	How many days received more than 1.0 inches of rain?         16
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    8
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         14
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:14:48
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2000-04-23
+Please enter end time: [2018-12-31] 
+2002-04-26
+
+•	How many total days are in the time period?                 734
+•	How many days received more than 0.5 inches of rain?         36
+•	How many days received more than 1.0 inches of rain?         10
+•	How many days received more than 2.0 inches of rain?          2
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          8
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:15:50
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2002-04-27
+Please enter end time: [2018-12-31] 
+2004-04-05
+
+•	How many total days are in the time period?                 710
+•	How many days received more than 0.5 inches of rain?         26
+•	How many days received more than 1.0 inches of rain?         10
+•	How many days received more than 2.0 inches of rain?          5
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          8
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:27:49
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+2004-04-06
+
+[Warning: Location does not exist! \n] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('flagger', 'C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\flagger.m', 49)" style="font-weight:bold">flagger</a> (<a href="matlab: opentoline('C:\Users\wzhang77\Documents\GitHub\Random-Data-Visualization\flagger.m',49,0)">line 49</a>)] 
+flagger
+   01-Nov-2019 13:28:09
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2004-04-06
+Please enter end time: [2018-12-31] 
+2005-04-09
+
+•	How many total days are in the time period?                 369
+•	How many days received more than 0.5 inches of rain?         20
+•	How many days received more than 1.0 inches of rain?          5
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          3
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:30:35
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2005-04-10
+Please enter end time: [2018-12-31] 
+2006-04-26
+
+•	How many total days are in the time period?                 382
+•	How many days received more than 0.5 inches of rain?         11
+•	How many days received more than 1.0 inches of rain?          0
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    3
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          6
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:32:12
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2006-04-27
+Please enter end time: [2018-12-31] 
+2007-05-07
+
+•	How many total days are in the time period?                 376
+•	How many days received more than 0.5 inches of rain?         20
+•	How many days received more than 1.0 inches of rain?          9
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    3
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          7
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:33:15
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2007-05-08
+Please enter end time: [2018-12-31] 
+2008-08-31
+
+•	How many total days are in the time period?                 482
+•	How many days received more than 0.5 inches of rain?         24
+•	How many days received more than 1.0 inches of rain?          7
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    2
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          8
+•	How many days had sea level pressures below 995 mb?           3
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:36:20
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2008-09-01
+Please enter end time: [2018-12-31] 
+2009-05-26
+
+•	How many total days are in the time period?                 268
+•	How many days received more than 0.5 inches of rain?         21
+•	How many days received more than 1.0 inches of rain?         10
+•	How many days received more than 2.0 inches of rain?          2
+•	How many days had wind speeds over 20 mph?                    3
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          4
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:44:03
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2009-05-27
+Please enter end time: [2018-12-31] 
+2010-04-18
+
+•	How many total days are in the time period?                 327
+•	How many days received more than 0.5 inches of rain?         19
+•	How many days received more than 1.0 inches of rain?          8
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    1
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          4
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:44:30
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2010-04-19
+Please enter end time: [2018-12-31] 
+2012-05-13
+
+•	How many total days are in the time period?                 756
+•	How many days received more than 0.5 inches of rain?         50
+•	How many days received more than 1.0 inches of rain?         13
+•	How many days received more than 2.0 inches of rain?          3
+•	How many days had wind speeds over 20 mph?                    7
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         14
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           1
+   01-Nov-2019 13:45:17
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2012-05-14
+Please enter end time: [2018-12-31] 
+2014-04-26
+
+•	How many total days are in the time period?                 713
+•	How many days received more than 0.5 inches of rain?         37
+•	How many days received more than 1.0 inches of rain?         11
+•	How many days received more than 2.0 inches of rain?          3
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          6
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:45:41
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2014-04-27
+Please enter end time: [2018-12-31] 
+2017-04-12
+
+•	How many total days are in the time period?                1082
+•	How many days received more than 0.5 inches of rain?         54
+•	How many days received more than 1.0 inches of rain?         21
+•	How many days received more than 2.0 inches of rain?          3
+•	How many days had wind speeds over 20 mph?                   10
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         10
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 13:47:29
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ord
+
+Please enter start time: [1958-11-01] 
+2017-04-13
+Please enter end time: [2018-12-31] 
+2018-12-31
+
+•	How many total days are in the time period?                 628
+•	How many days received more than 0.5 inches of rain?         37
+•	How many days received more than 1.0 inches of rain?         13
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          3
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:05:50
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+1989-04-21
+Please enter end time: [2018-12-31] 
+1993-05-01
+
+•	How many total days are in the time period?                1470
+•	How many days received more than 0.5 inches of rain?          0
+•	How many days received more than 1.0 inches of rain?          0
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                   16
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          0
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:08:20
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+1993-05-02
+Please enter end time: [2018-12-31] 
+1997-04-01
+
+•	How many total days are in the time period?                1431
+•	How many days received more than 0.5 inches of rain?          0
+•	How many days received more than 1.0 inches of rain?          0
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                   14
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          0
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:10:39
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+1997-04-02
+Please enter end time: [2018-12-31] 
+2000-04-22
+
+•	How many total days are in the time period?                1117
+•	How many days received more than 0.5 inches of rain?          2
+•	How many days received more than 1.0 inches of rain?          2
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    0
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          2
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:11:07
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2000-04-23
+Please enter end time: [2018-12-31] 
+2002-04-26
+
+•	How many total days are in the time period?                 734
+•	How many days received more than 0.5 inches of rain?          2
+•	How many days received more than 1.0 inches of rain?          2
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    9
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          8
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:11:30
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2002-04-27
+Please enter end time: [2018-12-31] 
+2004-04-05
+
+•	How many total days are in the time period?                 710
+•	How many days received more than 0.5 inches of rain?          2
+•	How many days received more than 1.0 inches of rain?          1
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    2
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         11
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:12:22
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2004-04-06
+Please enter end time: [2018-12-31] 
+2005-04-09
+
+•	How many total days are in the time period?                 369
+•	How many days received more than 0.5 inches of rain?          3
+•	How many days received more than 1.0 inches of rain?          1
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    1
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          4
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:12:48
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2005-04-10
+Please enter end time: [2018-12-31] 
+2006-04-26
+
+•	How many total days are in the time period?                 382
+•	How many days received more than 0.5 inches of rain?          4
+•	How many days received more than 1.0 inches of rain?          0
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    1
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          7
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:13:17
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2006-04-27
+Please enter end time: [2018-12-31] 
+2007-05-07
+
+•	How many total days are in the time period?                 376
+•	How many days received more than 0.5 inches of rain?         12
+•	How many days received more than 1.0 inches of rain?          0
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    1
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          4
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:13:46
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2007-05-08
+Please enter end time: [2018-12-31] 
+2008-08-31
+
+•	How many total days are in the time period?                 481
+•	How many days received more than 0.5 inches of rain?         20
+•	How many days received more than 1.0 inches of rain?          5
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    4
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          7
+•	How many days had sea level pressures below 995 mb?           3
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:14:11
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2008-09-01
+Please enter end time: [2018-12-31] 
+2009-05-26
+
+•	How many total days are in the time period?                 268
+•	How many days received more than 0.5 inches of rain?         16
+•	How many days received more than 1.0 inches of rain?          3
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    2
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          2
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:14:30
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2009-05-27
+Please enter end time: [2018-12-31] 
+2010-04-18
+
+•	How many total days are in the time period?                 327
+•	How many days received more than 0.5 inches of rain?         15
+•	How many days received more than 1.0 inches of rain?          4
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    0
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          5
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:15:31
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2010-04-19
+Please enter end time: [2018-12-31] 
+2012-05-13
+
+•	How many total days are in the time period?                 756
+•	How many days received more than 0.5 inches of rain?         39
+•	How many days received more than 1.0 inches of rain?          8
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    5
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         12
+•	How many days had sea level pressures below 995 mb?           2
+•	How many days had sea level pressures below 990 mb?           1
+   01-Nov-2019 16:15:56
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2012-05-14
+Please enter end time: [2018-12-31] 
+2014-04-26
+
+•	How many total days are in the time period?                 713
+•	How many days received more than 0.5 inches of rain?         26
+•	How many days received more than 1.0 inches of rain?          4
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    1
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          5
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:16:21
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2014-04-27
+Please enter end time: [2018-12-31] 
+2017-04-12
+
+•	How many total days are in the time period?                1082
+•	How many days received more than 0.5 inches of rain?         41
+•	How many days received more than 1.0 inches of rain?          8
+•	How many days received more than 2.0 inches of rain?          0
+•	How many days had wind speeds over 20 mph?                    2
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?         11
+•	How many days had sea level pressures below 995 mb?           1
+•	How many days had sea level pressures below 990 mb?           0
+   01-Nov-2019 16:16:45
+
+=============================================================================
+Please enter the name of the location you are interested in: [noh][ugn][ord] 
+ugn
+
+Please enter start time: [1989-04-21] 
+2017-04-13
+Please enter end time: [2018-12-31] 
+2018-12-31
+
+•	How many total days are in the time period?                 628
+•	How many days received more than 0.5 inches of rain?         29
+•	How many days received more than 1.0 inches of rain?         11
+•	How many days received more than 2.0 inches of rain?          1
+•	How many days had wind speeds over 20 mph?                    2
+•	How many days had wind speeds over 30 mph?                    0
+•	How many days had wind speeds over 40 mph?                    0
+•	How many days had sea level pressures below 1000 mb?          2
+•	How many days had sea level pressures below 995 mb?           0
+•	How many days had sea level pressures below 990 mb?           0
